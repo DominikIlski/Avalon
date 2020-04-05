@@ -1,3 +1,6 @@
+import 'dart:isolate';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'dart:async';
@@ -6,10 +9,66 @@ import 'package:http/http.dart' as http;
 
 
 
-  Future main() async => runApp(MyApp());
+  Future main() async
+{
+
+  serverTester();
+  /*compute(
+      (params) {
+        serverTester();
+      },
+    {'data' : 'here is data'}
+  );*/
 
 
 
+  //serverTester();
+  runApp(MyApp());
+
+}
+
+
+void serverTester() async
+{
+
+  void handleGet(HttpRequest request)
+  {
+    request.response.write('GET is Working!');
+
+    request.response.close();
+  }
+
+  void handleRequest(HttpRequest request)
+  {
+    try
+    {
+      if(request.method == 'GET')
+        handleGet(request);
+    } catch(e)
+    {
+      print('Exception in handleRequest: $e');
+    }
+  }
+
+  HttpServer server;
+
+  try{
+    server = await HttpServer.bind(InternetAddress.loopbackIPv4, 8080);
+
+    print('Listening on localhost:${server.port}');
+  }catch(e) {
+    throw new Error();
+    print("Something went wrong");
+  }
+
+  await for (HttpRequest request in server)
+  {
+    handleRequest(request);
+  }
+
+
+
+}
 
 
 
@@ -21,46 +80,7 @@ import 'package:http/http.dart' as http;
   {
 
 
-    Future serverTester() async
-    {
 
-
-      void handleGet(HttpRequest request) async
-      {
-        request.response.write('GET is Working!');
-        request.response.close();
-      }
-
-      void handleRequest(HttpRequest request) async
-      {
-        try
-        {
-             if(request.method == 'GET')
-               handleGet(request);
-        } catch(e)
-        {
-          print('Exception in handleRequest: $e');
-        }
-      }
-
-      HttpServer server;
-
-      try{
-        server = await HttpServer.bind(InternetAddress.loopbackIPv4, 8080);
-
-        print('Listening on localhost:${server.port}');
-      }catch(e) {
-        print("Something went wrong");
-      }
-
-      await for (HttpRequest request in server)
-      {
-        handleRequest(request);
-      }
-
-
-
-    }
 
 
     @override
@@ -92,27 +112,44 @@ import 'package:http/http.dart' as http;
     String message = "no responce form server";
     String helper = "";
 
+
+
+
+
+
+
+
     void _incrementCounter() async {
 
       Future<String> fetchData() async {
+        try {
+          final response = await http.get(
+              ('http://localhost:8080/'));
+          print('running');
+          var helper = response;
 
-        final response = await http.get((InternetAddress.loopbackIPv4.toString() + ":8080"));
-
-        if(response.statusCode == 200)
-          {
-            return await json.decode(response.body);
-
+          if (response.statusCode == 200) {
+          setState(() {
+            message = response.body;
+          });
           }
-        else
-          {
+          else {
             throw Exception('Filed to load data');
           }
+        } on SocketException catch(_) {
+          print('not conected');
+        }
+
       }
 
       fetchData().then((data)
       {
+
         helper = data;
       });
+
+      //fetchData();
+
 
 
       setState(() {
@@ -165,7 +202,7 @@ import 'package:http/http.dart' as http;
                 style: Theme.of(context).textTheme.display1,
               ),
               Text(
-                'The server response\n$message'
+                'The server response is\n $message'
               ),
             ],
           ),
