@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "664718128640",
+    "firebase_url": "https://ragnarok-71ba5.firebaseio.com",
+    "project_id": "ragnarok-71ba5",
+    "storage_bucket": "ragnarok-71ba5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664718128640:android:88178479d1671268238ae5",
+        "android_client_info": {
+          "package_name": "com.dominikilski.avalon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "664718128640-r554ab8edosit8uo7uj4ofqkm3g0taf6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB4S2C28Pq-qbTd8NEf3y4Xa7Ue6LxnTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "664718128640-r554ab8edosit8uo7uj4ofqkm3g0taf6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
