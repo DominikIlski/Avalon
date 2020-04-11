@@ -1,6 +1,6 @@
 # avalon
 
-Popular party game implementes in Flutter
+Popular party game implemented in Flutter
 
 ## Getting Started
 
