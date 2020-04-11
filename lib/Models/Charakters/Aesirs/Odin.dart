@@ -1,5 +1,4 @@
-import 'package:avalon/Models/Jotuns/Jotun.dart';
-
+import 'package:avalon/Models/Charakters/Jotuns/Jotun.dart';
 import 'Aesir.dart';
 
 class Odin extends Aesir
