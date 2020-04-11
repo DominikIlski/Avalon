@@ -1,0 +1,4 @@
+class Charakter
+{
+  String name;
+}
