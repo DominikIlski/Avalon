@@ -1,4 +1,5 @@
-import 'package:avalon/Models/Charakter/Charakter.dart';
+import '../Charakter.dart';
+
 
 class Jotun extends Charakter
 {
