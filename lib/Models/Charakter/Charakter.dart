@@ -1,4 +1,0 @@
-class Charakter
-{
-  String name;
-}

@@ -1,4 +1,4 @@
-import 'package:avalon/Models/Charakter/Aesir/Aesir.dart';
+import 'Aesir.dart';
 
 class Mimir extends Aesir
 {
