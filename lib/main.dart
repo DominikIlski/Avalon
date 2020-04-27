@@ -6,82 +6,20 @@ import 'dart:io';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-
-
-
-  Future main() async
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+var User;
+Future main() async
 {
 
-  serverTester();
-  /*compute(
-      (params) {
-        serverTester();
-      },
-    {'data' : 'here is data'}
-  );*/
-
-
-
-  //serverTester();
   runApp(MyApp());
 
-}
-
-
-void serverTester() async
-{
-
-  void handleGet(HttpRequest request)
-  {
-    request.response.write('GET is Working!');
-
-    request.response.close();
-  }
-
-  void handleRequest(HttpRequest request)
-  {
-    try
-    {
-      if(request.method == 'GET')
-        handleGet(request);
-    } catch(e)
-    {
-      print('Exception in handleRequest: $e');
-    }
-  }
-
-  HttpServer server;
-
-  try{
-    server = await HttpServer.bind(InternetAddress.loopbackIPv4, 8080);
-
-    print('Listening on localhost:${server.port}');
-  }catch(e) {
-    throw new Error();
-    print("Something went wrong");
-  }
-
-  await for (HttpRequest request in server)
-  {
-    handleRequest(request);
-  }
-
 
 
 }
-
-
-
-
-
-
 
   class MyApp extends StatelessWidget
   {
-
-
-
-
 
     @override
     Widget build(BuildContext context)
@@ -113,7 +51,23 @@ void serverTester() async
     String helper = "";
 
 
+    Future<FirebaseUser> _handleSignIn() async
+    {
 
+      final FirebaseAuth _auth = FirebaseAuth.instance;
+
+      /*final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
+      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+      final AuthCredential credential = GoogleAuthProvider.getCredential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );*/
+
+      final FirebaseUser user = (await _auth.signInAnonymously()).user;
+      print("signed in " + user.displayName);
+      return user;
+    }
 
 
 
@@ -121,40 +75,10 @@ void serverTester() async
 
     void _incrementCounter() async {
 
-      Future<String> fetchData() async {
-        try {
-          final response = await http.get(
-              ('http://localhost:8080/'));
-          print('running');
-          var helper = response;
 
-          if (response.statusCode == 200) {
-          setState(() {
-            message = response.body;
-          });
-          }
-          else {
-            throw Exception('Filed to load data');
-          }
-        } on SocketException catch(_) {
-          print('not conected');
-        }
+      setState(()  {
 
-      }
-
-      fetchData().then((data)
-      {
-
-        helper = data;
-      });
-
-      //fetchData();
-
-
-
-      setState(() {
-
-        message = helper;
+        message = User.getIdToken().toString();
 
         _counter++;
       });
@@ -208,7 +132,16 @@ void serverTester() async
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: _incrementCounter,
+          onPressed: () async {
+            _handleSignIn()
+                .then((FirebaseUser user) => setState( () {
+                user.getIdToken().then((result) {
+                  message = result.token;
+                });
+                print('setState called');
+                }))
+                .catchError((e) => print(e));
+          },
           tooltip: 'Increment',
           child: Icon(Icons.add),
         ), // This trailing comma makes auto-formatting nicer for build methods.
