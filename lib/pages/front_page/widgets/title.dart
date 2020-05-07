@@ -13,7 +13,10 @@ class Title extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: _title,
+      child: Align(
+        alignment: Alignment(0, -1),
+        child: _title
+      ),
       margin: EdgeInsets.only(top: 100, left: 10, right: 10),
       width: double.infinity,
     );
