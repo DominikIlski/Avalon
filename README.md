@@ -1,4 +1,4 @@
-# avalon
+# ragnarok
 
 Popular party game implemented in Flutter
 
