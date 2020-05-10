@@ -12,7 +12,7 @@ class Title extends StatelessWidget {
             style: Theme.of(context).textTheme.headline1,
           )),
       //margin: EdgeInsets.only(top: 70, left: 10, right: 10),
-      width: double.infinity,
+      width: double.infinity, //help
     );
   }
 }
