@@ -7,9 +7,14 @@ import 'widgets/title.dart' as ragnarok_title;
 
 
 /// public
-class FrontPage extends StatelessWidget {
+class FrontPage extends StatefulWidget {
   //TODO: implement route function
 
+  @override
+  _FrontPageState createState() => _FrontPageState();
+}
+
+class _FrontPageState extends State<FrontPage> {
   void tester() => print('button pressed');
 
   @override
