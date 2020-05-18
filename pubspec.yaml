@@ -34,6 +34,7 @@ dependencies:
   firebase_auth: 0.16.0
   flutter_svg: 0.17.4
   effective_dart: ^1.0.0
+  flare_flutter: 2.0.3
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +57,9 @@ flutter:
     - assets/title_main.svg
     - assets/connect_to_game.svg
     - assets/new_game.svg
+    - assets/animations/ragnarok_main.flr
+    - assets/animations/ragnarok_main1.flr
+
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
   fonts:
