@@ -3,7 +3,8 @@ import 'package:flare_flutter/flare_controller.dart';
 import 'package:flutter/material.dart';
 
 
-import '../../shared/widgets/main_button.dart';
+import '../../shared/widgets/main_button_animation.dart';
+
 
 import 'widgets/title.dart' as ragnarok_title;
 
@@ -18,11 +19,9 @@ class FrontPage extends StatefulWidget {
 class _FrontPageState extends State<FrontPage> {
   void tester() => print('button pressed');
   static final _openingAnimation = 'OpeningAnimation';
-  static final _animationDuration = Duration(milliseconds: 1000);
+  static final _animationDuration = Duration(seconds: 1);
   static var _visable = false;
-
   double visability() => _visable ? 1.0 : 0.0;
-
   void _startButtonsAnimation() {
     setState(() {
       _visable = true;
@@ -45,16 +44,15 @@ class _FrontPageState extends State<FrontPage> {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                AnimatedOpacity(
-                  opacity: visability(),
-                  duration: _animationDuration,
-                  child: MainButton('New Game', tester),
-                ),
-                AnimatedOpacity(
-                  opacity: visability(),
-                  duration: _animationDuration,
-                  child: MainButton('Join Game', tester),
-                ),
+
+                MainButtonAnimation(_animationDuration,
+                 visability, tester),
+                 
+                MainButtonAnimation(_animationDuration,
+                 visability, tester)  
+
+                
+                
               ],
             ),
           )

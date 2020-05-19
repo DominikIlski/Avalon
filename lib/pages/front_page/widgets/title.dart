@@ -50,7 +50,7 @@ class TitleController extends FlareController {
       return false;
     }
 
-    if(_duration >= 2.5){
+    if(_duration >= 3.0){
       if (_animationStatut) {
           buttonAnimation();
           _animationStatut = false;
