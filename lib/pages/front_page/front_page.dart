@@ -45,10 +45,10 @@ class _FrontPageState extends State<FrontPage> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
 
-                MainButtonAnimation(_animationDuration,
+                MainButtonAnimation('New Game',_animationDuration,
                  visability, tester),
                  
-                MainButtonAnimation(_animationDuration,
+                MainButtonAnimation('Join Game',_animationDuration,
                  visability, tester)  
 
                 
