@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+
+
 import '../themes/button_themes.dart';
 import '../themes/text_themes.dart';
-import 'front_page/front_page.dart';
+import 'main_menu/main_menu.dart';
+import 'new_game/new_game.dart';
 
 ///
 class Routes extends StatelessWidget {
@@ -9,8 +12,9 @@ class Routes extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       initialRoute: '/',
-      routes: {'/': (context) => FrontPage(),
-      '/newGame' : (context) => Material() //TODO: implementSecond Page
+      routes: {'/': (context) => MainManu(),
+      '/newGame' : (context) => NewGame(),
+      '/joinGame' : (context) => Scaffold(body: Text('joinGame'),) //TODO: implementSecond Page
       },
       theme: ThemeData(
         brightness: Brightness.dark,
