@@ -17,7 +17,7 @@ class FrontPage extends StatefulWidget {
 }
 
 class _FrontPageState extends State<FrontPage> {
-  void tester() => print('button pressed');
+  void tester() => print('button pressed');    
   static final _openingAnimation = 'OpeningAnimation';
   static final _animationDuration = Duration(seconds: 1);
   static var _visable = false;

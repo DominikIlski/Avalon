@@ -10,7 +10,8 @@ class MainButtonAnimation extends StatefulWidget {
   final String _buttonText;
 
   ///
-  MainButtonAnimation(this._buttonText,this._duration, this._visability, this._routeFunction);
+  MainButtonAnimation(this._buttonText,this._duration,
+   this._visability, this._routeFunction);
 
   @override
   _MainButtonAnimationState createState() => _MainButtonAnimationState();

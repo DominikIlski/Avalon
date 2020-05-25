@@ -11,7 +11,6 @@ class Title extends StatelessWidget {
   final FlareController _controller;
   ///
   Title(this._controller) ;
-  
 
   @override
   Widget build(BuildContext context) {
