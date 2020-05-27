@@ -36,6 +36,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0"
+  bson:
+    dependency: transitive
+    description:
+      name: bson
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.2"
   charcode:
     dependency: transitive
     description:
@@ -99,6 +106,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.1"
+  english_words:
+    dependency: "direct main"
+    description:
+      name: english_words
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.5"
   firebase:
     dependency: transitive
     description:
@@ -148,6 +162,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.1+2"
+  fixnum:
+    dependency: transitive
+    description:
+      name: fixnum
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.10.11"
   flare_dart:
     dependency: transitive
     description:
@@ -219,6 +240,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.1+1"
+  logging:
+    dependency: transitive
+    description:
+      name: logging
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.11.4"
   matcher:
     dependency: transitive
     description:
@@ -233,6 +261,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.8"
+  mongo_dart:
+    dependency: "direct main"
+    description:
+      name: mongo_dart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.0"
+  mongo_dart_query:
+    dependency: transitive
+    description:
+      name: mongo_dart_query
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.1"
+  more:
+    dependency: transitive
+    description:
+      name: more
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.18.2"
   path:
     dependency: transitive
     description:
@@ -275,6 +324,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
+  pool:
+    dependency: transitive
+    description:
+      name: pool
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.4.0"
   quiver:
     dependency: transitive
     description:
