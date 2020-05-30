@@ -1,23 +1,21 @@
-import 'package:flare_flutter/flare.dart';
-import 'package:flare_flutter/flare_controller.dart';
 import 'package:flutter/material.dart';
 
-
 import '../../shared/widgets/main_button_animation.dart';
-
 
 import 'widgets/title.dart' as ragnarok_title;
 
 /// public
-class FrontPage extends StatefulWidget {
+class MainManu extends StatefulWidget {
   //TODO: implement route function
 
   @override
-  _FrontPageState createState() => _FrontPageState();
+  _MainManuState createState() => _MainManuState();
 }
 
-class _FrontPageState extends State<FrontPage> {
-  void tester() => print('button pressed');
+class _MainManuState extends State<MainManu> {
+  void newGameRoute() => Navigator.pushNamed(context, '/newGame');
+  void joinGameRoute() => Navigator.pushNamed(context, '/joinGame');
+
   static final _openingAnimation = 'OpeningAnimation';
   static final _animationDuration = Duration(seconds: 1);
   static var _visable = false;
@@ -44,15 +42,10 @@ class _FrontPageState extends State<FrontPage> {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-
-                MainButtonAnimation('New Game',_animationDuration,
-                 visability, tester),
-                 
-                MainButtonAnimation('Join Game',_animationDuration,
-                 visability, tester)  
-
-                
-                
+                MainButtonAnimation(
+                    'New Game', _animationDuration, visability, newGameRoute),
+                MainButtonAnimation(
+                    'Join Game', _animationDuration, visability, joinGameRoute)
               ],
             ),
           )
@@ -64,4 +57,3 @@ class _FrontPageState extends State<FrontPage> {
 }
 
 ///
-
