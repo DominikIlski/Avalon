@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../shared/Models/Charakters/Charakter.dart';
+import 'charakters_selections.dart';
 import 'player_count.dart';
 
 ///
@@ -49,7 +50,7 @@ class _NewGameState extends State<NewGame> {
           appBar: TabBar(
             
             labelColor: Theme.of(context).accentColor,
-            unselectedLabelColor: Color(0xff757575),
+            unselectedLabelColor: Theme.of(context).primaryColorLight,
             tabs: [
             SafeArea(
                 child: Tab(
@@ -65,7 +66,7 @@ class _NewGameState extends State<NewGame> {
             )),
           ]),
           body: TabBarView(children: [PlayerCount(playerTester),
-           Text("$_playersCount"), Text("$_playersCount")]),
+           CharakterSelection(), Text("$_playersCount")]),
         ));
   }
 }

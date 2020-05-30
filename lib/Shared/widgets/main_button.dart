@@ -18,7 +18,7 @@ class _MainButtonState extends State<MainButton> {
   Widget build(BuildContext context) {
     return Container(
       child: RaisedButton(
-          color: Color(0xff212122),
+          color: Theme.of(context).primaryColor,
           child: FittedBox(
               fit: BoxFit.fitWidth,
               child: Container(
