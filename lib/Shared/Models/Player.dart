@@ -1,13 +1,13 @@
 import 'package:uuid/uuid.dart';
 
-import 'Charakters/Charakter.dart';
+import 'Characters/Character.dart';
 
 class Player
 {
   String playerID;
   String name;
   String ip;
-  Charakter role;
+  Character role;
 
   Player({this.name, this.ip})
   {
@@ -15,9 +15,9 @@ class Player
     playerID = uuid.v4();
   }
 
-  set setRole(Charakter charakter)
+  set setRole(Character Character)
   {
-    this.role = charakter;
+    this.role = Character;
   }
 
   String get getRoleName

@@ -62,6 +62,7 @@ flutter:
     - assets/new_game.svg
     - assets/animations/ragnarok_main.flr
     - assets/animations/ragnarok_main1.flr
+    - lib/shared/Models/charekter_assets
 
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg

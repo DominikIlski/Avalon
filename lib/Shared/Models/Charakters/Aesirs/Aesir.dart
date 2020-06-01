@@ -1,8 +1,9 @@
 import 'dart:math';
 
-import '../charakter.dart';
+import '../Charakter.dart';
+
 ///
-class Aesir extends Charakter
+class Aesir extends Character
 {
   ///
   Aesir()

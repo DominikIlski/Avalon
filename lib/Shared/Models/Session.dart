@@ -1,8 +1,8 @@
-import 'Charakters/Charakter.dart';
+import 'Characters/Character.dart';
 import 'Player.dart';
 
 class Session {
   Player admin;
-  List<Charakter> characters;
+  List<Character> characters;
   List<Player> players;
 }

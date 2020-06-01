@@ -1,11 +1,11 @@
-import '../Charakter.dart';
+import '../Character.dart';
 
 
-class Jotun extends Charakter
+class Jotun extends Character
 {
-  List<Charakter> alies;
+  List<Character> alies;
   Jotun()
   {
-    alies = new List<Charakter>();
+    alies = new List<Character>();
   }
 }

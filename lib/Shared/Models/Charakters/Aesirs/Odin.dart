@@ -1,4 +1,4 @@
-import 'package:avalon/Shared/Models/Charakters/Jotuns/Jotun.dart';
+import 'package:avalon/shared/Models/Charakters/Jotuns/Jotun.dart';
 
 import 'Aesir.dart';
 

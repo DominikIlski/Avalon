@@ -1,7 +1,8 @@
+import 'package:avalon/shared/Models/Charakters/Charakter.dart';
 import 'package:flutter/material.dart';
 
-import '../../shared/Models/Charakters/Charakter.dart';
-import 'charakters_selections.dart';
+
+import 'characters_selections.dart';
 import 'player_count.dart';
 
 ///
@@ -12,7 +13,7 @@ class NewGame extends StatefulWidget {
 
 class _NewGameState extends State<NewGame> {
   var _playersCount = 5;
-  var _charakters = <Charakter>[];
+  var _Characters = <Character>[];
   String _gameCode;
   String _hostName;
 
@@ -29,10 +30,10 @@ class _NewGameState extends State<NewGame> {
   ///
   int get playersAmount => _playersCount;
 
-  set charakters(List<Charakter> listOfCharakters) =>
-      _charakters = listOfCharakters;
+  set Characters(List<Character> listOfCharacters) =>
+      _Characters = listOfCharacters;
 
-  List<Charakter> get charakters => _charakters;
+  List<Character> get Characters => _Characters;
 
   set gameCode(String code) => _gameCode = code;
 
@@ -66,7 +67,7 @@ class _NewGameState extends State<NewGame> {
             )),
           ]),
           body: TabBarView(children: [PlayerCount(playerTester),
-           CharakterSelection(), Text("$_playersCount")]),
+           CharacterSelection(), Text("$_playersCount")]),
         ));
   }
 }
